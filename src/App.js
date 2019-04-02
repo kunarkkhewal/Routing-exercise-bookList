@@ -12,7 +12,8 @@ import Header from './components/header';
 import Login from './components/Login';
 import Logout from './components/Logout';
 import Books from './components/Books';
-import Bookdetail from './components/Bookdetail'
+import Bookdetail from './components/Bookdetail';
+import books from './books';
 
 class App extends Component {
 	constructor() {
@@ -83,11 +84,18 @@ class App extends Component {
 					component={Books}
 				/>
 
-				{/* <PrivateRoute
+				<Route
+
 					path='/book-detail'
+					Component={(data) => <Bookdetail data={data} />}
+
+				/>
+
+				<PrivateRoute
+					path='/book-detail/:id'
 					hasLoggedIn={this.state.hasLoggedIn}
 					component={Bookdetail}
-				/> */}
+				/>
 
 			</Router>
 		);

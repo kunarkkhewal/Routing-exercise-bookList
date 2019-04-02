@@ -1,34 +1,26 @@
 import React from 'react';
 import {
-	BrowserRouter as Router,
-	Route,
-	Link,
-	Redirect,
-	withRouter
+    BrowserRouter as Router,
+    Route,
+    Link,
+    Redirect,
+    withRouter
 } from "react-router-dom";
+import bookls from '../books'
+
 const Bookdetail = props => {
 
-    
-    // const {
-    //     name,
-    //     isbn,
-    //     description,
-    //     pages,
-    // } = props.data.state;
-
-  
-
+    let{name, description, isbn, pages}= bookls[props.match.params.id];
     return (
-        <div>
+        <div className='bookDetail'>
             {console.log(props)}
             <h1> book detail page</h1>
-       
-            {/* {console.log("in book details")}
-            <h1>{name}</h1>
-            <p>Title: {name}</p>
+
+            <h2>Title:{name}</h2>
+            <p>Description{description}</p>
             <p>Pages: {pages}</p>
-            <br />
-            <p>Description: {description}</p> */}
+            <p>ISBN: {isbn}</p>
+            
         </div>
     )
 

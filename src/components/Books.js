@@ -12,12 +12,14 @@ class Books extends Component {
     }
 
     render(){
+        // console.log("in books",this.state.books)
         return(
-            <div>
+            
+            <div className='books'>
                 {this.state.books.map((item, index)=>{
                     const {id,name,isbn}=item;
                     return(
-                        <Link to={{pathname:`book-detail/${id}/${name}`}} key={isbn}>
+                        <Link className='link' to={{pathname:`book-detail/${id}`}}>
                             <Bookfront data={item}/>
                         </Link>
                     )
